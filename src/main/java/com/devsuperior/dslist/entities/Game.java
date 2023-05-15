@@ -1,7 +1,6 @@
 package com.devsuperior.dslist.entities;
 
 import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
 
 import java.util.Objects;
 
@@ -11,7 +10,6 @@ public class Game {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @EqualsAndHashCode.Include
     private Long id;
     private String title;
     @Column(name = "game_year")
@@ -20,9 +18,9 @@ public class Game {
     private String platforms;
     private Double score;
     private String imgUrl;
-    @Column(columnDefinition="text")
+    @Column(columnDefinition = "text")
     private String shortDescription;
-    @Column(columnDefinition="text")
+    @Column(columnDefinition = "text")
     private String longDescription;
 
     public Game() {
