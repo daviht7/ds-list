@@ -27,4 +27,10 @@ public class GameService {
         return new GameDTO(game);
     }
 
+    @Transactional(readOnly = true) //não bloqueia banco de dados, somente consulta
+    public List<GameMinDTO> findByList(Long listId) {
+        var result = gameRepository.searchByList(listId);
+        return result.stream().map(GameMinDTO::new).toList();
+    }
+
 }
