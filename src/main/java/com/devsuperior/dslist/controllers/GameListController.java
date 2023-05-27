@@ -34,7 +34,7 @@ public class GameListController {
 
     @PostMapping("/{listId}/replacement")
     public ResponseEntity<?> move(@PathVariable("listId") Long listId, @RequestBody ReplacementDTO replacementDTO) {
-        gameListService.move(listId, replacementDTO.getSourceIndex(), replacementDTO.getSourceIndex();
+        gameListService.move(listId, replacementDTO.getSourceIndex(), replacementDTO.getSourceIndex());
         return ResponseEntity.ok().build();
     }
 
